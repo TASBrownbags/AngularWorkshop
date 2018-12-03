@@ -4,11 +4,11 @@
 <div class = "container">
   <div class = "hero-value">
     <label for= "name">Hero name: </label>
-    <input id="name" name ="name" class = "form-control" #heroName />
+    <input id="name" name ="name" class = "form-control" />
   </div>
   
   
-  <button class = "float-right" (click)="add(heroName.value); heroName.value='';">
+  <button class = "float-right">
     add
   </button>
 </div>
@@ -18,16 +18,16 @@
       <th>Name</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let hero of heroes">
-      <td scope = "col" class="badge">{{hero.id}}</td>
+    <tr>
+      <td scope = "col" class="badge">id</td>
       <td scope = "col">
-        <a routerLink="/detail/{{hero.id}}">
-          {{hero.name}}
+        <a routerLink="/detail/1">
+          name
         </a>
       </td>
       <td scope ="col">
           <button type = "button" class = "delete" title="delete hero"
-          (click)="delete(hero)">x</button>
+          >x</button>
       </td>
     </tr>
   </table>

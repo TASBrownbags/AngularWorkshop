@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 import { Hero }         from '../hero';
 import { HeroService }  from '../hero.service';
 import { PowerLevel } from '../powerLevel';
-import { DemoService } from '../services/demo.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -19,7 +18,6 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private demoService: DemoService,
     private location: Location
   ) {}
 
@@ -36,10 +34,5 @@ export class HeroDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
-  }
-
- save(): void {
-    this.demoService.updateHero(this.hero)
-      .subscribe(() => this.goBack());
   }
 }
